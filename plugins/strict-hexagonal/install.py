@@ -34,7 +34,6 @@ SKILLS = [
     "typescript-craft",
     "nuxt-craft",
     "nextjs-craft",
-    "markdown-to-vdl",
     "prd-craft",
     "craft-router",
 ]

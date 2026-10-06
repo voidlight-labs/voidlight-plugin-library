@@ -6,7 +6,8 @@ A library of agent plugins by Voidlight. Each folder under `plugins/` is an inst
 
 | Plugin | Path | What |
 |---|---|---|
-| [strict-hexagonal](plugins/strict-hexagonal/) | `plugins/strict-hexagonal/` | Language-craft skills enforcing strict 2-layer hexagonal architecture (Java, Python, Rust, TypeScript, Nuxt, Next.js), a Markdown-to-VDL converter, and the prd-craft/craft-router process skills. |
+| [strict-hexagonal](plugins/strict-hexagonal/) | `plugins/strict-hexagonal/` | Language-craft skills enforcing strict 2-layer hexagonal architecture (Java, Python, Rust, TypeScript, Nuxt, Next.js) plus the prd-craft/craft-router process skills. |
+| [voidlight-soul](plugins/voidlight-soul/) | `plugins/voidlight-soul/` | Voidlight Soul content engine: 4 process skills (soul-write, soul-split, soul-audit, markdown-to-vdl) + 2 subagent personas (voidlight-scribe writer, sanad-auditor provenance auditor) for Divine Alignment Architecture content, VDL conversion, and Islamic source verification. |
 
 ## Repository layout
 
@@ -15,15 +16,23 @@ voidlight-plugin-library/
 ├── marketplace.json              # Plugin catalog (ZCode native format)
 ├── .claude-plugin/marketplace.json  # Plugin catalog (Claude Code format)
 ├── plugins/
-│   └── strict-hexagonal/         # One self-contained plugin per folder
+│   ├── strict-hexagonal/         # Craft skills plugin (2-layer hexagonal architecture)
+│   │   ├── .zcode-plugin/plugin.json
+│   │   ├── .claude-plugin/plugin.json
+│   │   ├── assets/               # Icon and visual assets
+│   │   ├── skills/               # SKILL.md per skill
+│   │   ├── agents/               # Subagent persona definitions
+│   │   ├── benchmark/            # Benchmark runner + scenarios
+│   │   ├── docs/                 # Plugin docs (INSTALL.md)
+│   │   ├── install.sh / install.py
+│   │   └── README.md / CONTRIBUTING.md
+│   └── voidlight-soul/           # Voidlight Soul content engine (write + audit)
 │       ├── .zcode-plugin/plugin.json
 │       ├── .claude-plugin/plugin.json
-│       ├── assets/               # Icon and visual assets
-│       ├── skills/               # SKILL.md per skill
-│       ├── agents/               # Subagent persona definitions
-│       ├── benchmark/            # Benchmark runner + scenarios
-│       ├── docs/                 # Plugin docs (INSTALL.md)
-│       ├── install.sh / install.py
+│       ├── assets/               # Icon
+│       ├── skills/               # soul-write, soul-split, soul-audit
+│       ├── agents/               # voidlight-scribe, sanad-auditor personas
+│       ├── references/           # Shared handoff contracts (pipeline, tags, dalil)
 │       └── README.md / CONTRIBUTING.md
 ```
 

@@ -7,7 +7,7 @@ Thank you for your interest in contributing. This document outlines the process 
 Two categories (see AGENTS.md, "Skill File Anatomy"):
 
 - **Craft skills** (`{lang}-craft`): follow the full checklist below.
-- **Process skills** (e.g. `prd-craft`, `markdown-to-vdl`): thinner instruction skills. Requirements: canonical frontmatter (see Validation Requirements) and a clear gate/checklist/output contract. Rules-and-rubric anatomy and benchmark scenarios do not apply.
+- **Process skills** (e.g. `prd-craft`): thinner instruction skills. Requirements: canonical frontmatter (see Validation Requirements) and a clear gate/checklist/output contract. Rules-and-rubric anatomy and benchmark scenarios do not apply.
 
 ### Craft skill checklist
 

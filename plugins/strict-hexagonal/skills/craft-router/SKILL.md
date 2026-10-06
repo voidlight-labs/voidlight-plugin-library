@@ -7,7 +7,7 @@ description: >-
   emits one route entry per task per language. Invoke during the prd-craft
   routing phase, after task sizing, before dispatching to a smith tier.
 metadata:
-  version: '3.0.0'
+  version: '4.0.0'
   author: Voidlight
   applyTo: '**/*'
   tags: [routing, craft, language, process, voidlight]
@@ -37,7 +37,6 @@ Skill proses yang nentuin **{lang}-craft skill mana yang harus di-load** untuk s
 | `**/*.ts` (backend) | `package.json` tanpa Next/Nuxt, Express/Fastify import | `typescript-craft` |
 | `**/*.{tsx,ts}` | `next.config.*`, `app/` dir, `"next"` di dependencies | `nextjs-craft` |
 | `**/*.{vue,ts}` | `nuxt.config.*`, `"nuxt"` di dependencies | `nuxt-craft` |
-| `**/*.md` + intent konversi | explicit "convert to VDL" | `markdown-to-vdl` |
 
 ---
 
@@ -45,9 +44,8 @@ Skill proses yang nentuin **{lang}-craft skill mana yang harus di-load** untuk s
 
 1. **Framework-specific menang atas language-generic.** `**/*.{tsx,ts}` dengan Next.js App Router → `nextjs-craft`, BUKAN `typescript-craft`. Sama untuk Nuxt/Vue.
 2. **`typescript-craft` itu backend-only.** Kalau target adalah UI component (`.tsx` / `.vue`) tapi framework-nya ambiguous → tanya user, jangan default ke typescript-craft.
-3. **`markdown-to-vdl` HANYA untuk konversi eksplisit.** File `.md` biasa (docs, README, PRD) tidak diroute ke skill mana pun.
-4. **Multi-language task → split.** Satu task yang nyentuh dua bahasa = dua route entry, masing-masing dengan craft skill-nya. Dispatcher yang putusin: tetap satu smith atau dua.
-5. **Tanpa code target** (docs, config murni, research) → tidak ada craft skill; route ke `explorer` atau smith tier tanpa craft skill line.
+3. **Multi-language task → split.** Satu task yang nyentuh dua bahasa = dua route entry, masing-masing dengan craft skill-nya. Dispatcher yang putusin: tetap satu smith atau dua.
+4. **Tanpa code target** (docs, config murni, research) → tidak ada craft skill; route ke `explorer` atau smith tier tanpa craft skill line.
 
 ---
 

@@ -1,12 +1,12 @@
 # Strict Hexagonal: AI Coding Agent Skills for Clean Architecture
 
-![Version](https://img.shields.io/badge/version-3.0.0-blue)
+![Version](https://img.shields.io/badge/version-4.0.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
-![Skills](https://img.shields.io/badge/skills-9-blueviolet)
+![Skills](https://img.shields.io/badge/skills-8-blueviolet)
 ![Benchmark](https://img.shields.io/badge/benchmark_scenarios-30-orange)
 
-**Strict Hexagonal** is a Voidlight plugin and a collection of 9 production-grade **AI coding agent skills** that enforce strict **2-layer clean architecture** (pure domain, framework infrastructure) across Java, Python, Rust, TypeScript, Nuxt, and Next.js, installable as a plugin in **Claude Code**, **ZCode**, **OpenCode**, and other AI coding agents. Also included: a **prd-craft** process skill (PRD-first gate with subagent routing by task size), 3 **agent personas** (architect, smith, surveyor), and a 30-scenario **benchmark suite** that scores AI-generated code against the skill rules.
+**Strict Hexagonal** is a Voidlight plugin and a collection of 8 production-grade **AI coding agent skills** that enforce strict **2-layer clean architecture** (pure domain, framework infrastructure) across Java, Python, Rust, TypeScript, Nuxt, and Next.js, installable as a plugin in **Claude Code**, **ZCode**, **OpenCode**, and other AI coding agents. Also included: a **prd-craft** process skill (PRD-first gate with subagent routing by task size), 3 **agent personas** (architect, smith, surveyor), and a 30-scenario **benchmark suite** that scores AI-generated code against the skill rules.
 
 ## Why
 
@@ -35,11 +35,10 @@ AI code generators produce working code that quietly violates architecture disci
 | [`typescript-craft`](skills/typescript-craft/SKILL.md) | `**/*.ts` | Express, Fastify (backend) | Strict contracts, validated boundaries, no `any` |
 | [`nuxt-craft`](skills/nuxt-craft/SKILL.md) | `**/*.{vue,ts}` | Nuxt 3/4, Vue 3 | SSR-safe layering, version-aware practices |
 | [`nextjs-craft`](skills/nextjs-craft/SKILL.md) | `**/*.{tsx,ts}` | Next.js App Router | Server/client split, dependency-free domain |
-| [`markdown-to-vdl`](skills/markdown-to-vdl/SKILL.md) | `**/*.md` | VDL | Markdown → knowledge graph conversion |
 | [`prd-craft`](skills/prd-craft/SKILL.md) | `**/*` (process skill) | — | PRD-first gate: interview, PRD artifact, approval gate, subagent routing by task size |
 | [`craft-router`](skills/craft-router/SKILL.md) | `**/*` (process skill) | — | Task → {lang}-craft skill routing by file glob, manifest, and framework markers |
 
-The seven language-craft skills ship with: 10 mandatory rules (10 sub-rules each), 15 forbidden patterns, a 6-step thinking protocol, 10 response rules, 8 context-awareness checks, a 7-category scoring rubric (100 points), and complete 2-layer architecture examples. The two process skills (`markdown-to-vdl`, `prd-craft`) are thinner instruction skills: gates, checklists, and output contracts instead of rules-and-rubric.
+The six language-craft skills ship with: 10 mandatory rules (10 sub-rules each), 15 forbidden patterns, a 6-step thinking protocol, 10 response rules, 8 context-awareness checks, a 7-category scoring rubric (100 points), and complete 2-layer architecture examples. The two process skills (`prd-craft`, `craft-router`) are thinner instruction skills: gates, checklists, and output contracts instead of rules-and-rubric.
 
 ## Architecture Principle: 2-Layer Pragmatic Clean Architecture
 

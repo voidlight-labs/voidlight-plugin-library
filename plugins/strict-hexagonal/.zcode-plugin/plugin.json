@@ -1,7 +1,7 @@
 {
   "name": "strict-hexagonal",
-  "description": "Six language-craft skills enforcing strict 2-layer hexagonal architecture (standard-library-only domain, framework infrastructure) for Java, Python, Rust, TypeScript, Nuxt, and Next.js, plus a Markdown-to-VDL converter skill and two process skills: prd-craft (PRD-first gate with complexity-scored subagent routing) and craft-router (task to language-craft skill routing). Use when writing or reviewing production code in any of these stacks, converting Markdown knowledge graphs to VDL, or starting any feature or implementation request.",
-  "version": "3.0.0",
+  "description": "Six language-craft skills enforcing strict 2-layer hexagonal architecture (standard-library-only domain, framework infrastructure) for Java, Python, Rust, TypeScript, Nuxt, and Next.js, plus two process skills: prd-craft (PRD-first gate with complexity-scored subagent routing) and craft-router (task to language-craft skill routing). Use when writing or reviewing production code in any of these stacks or starting any feature or implementation request.",
+  "version": "4.0.0",
   "author": {
     "name": "Voidlight"
   },

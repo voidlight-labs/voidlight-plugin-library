@@ -1,0 +1,26 @@
+{
+  "name": "voidlight-soul",
+  "description": "Voidlight Soul content engine: four process skills - soul-write (full document drafting), soul-split (section-by-section workflow with a sidecar manifest), soul-audit (standalone source verification), and markdown-to-vdl (structured Markdown to Voidlight Definition Language conversion) - orchestrating two subagents: voidlight-scribe, writer for the Divine Alignment Architecture corpus (tagged claims, dalil protocol, corpus voice), and sanad-auditor, provenance auditor for hadith, tafsir, asbab al-nuzul, Quran quotations, and Israiliyyat, emitting structured verdicts. Use when writing or revising Voidlight Soul content, converting Voidlight Soul documents to VDL, or verifying Islamic source attributions before publication.",
+  "version": "1.1.0",
+  "author": {
+    "name": "Voidlight"
+  },
+  "homepage": "https://github.com/voidlight-labs/voidlight-plugin-library",
+  "repository": "https://github.com/voidlight-labs/voidlight-plugin-library",
+  "license": "MIT",
+  "keywords": [
+    "voidlight-soul",
+    "divine-alignment",
+    "islamic-content",
+    "hadith",
+    "tafsir",
+    "sanad",
+    "dalil",
+    "quran",
+    "verification",
+    "audit",
+    "writing",
+    "theology",
+    "process"
+  ]
+}

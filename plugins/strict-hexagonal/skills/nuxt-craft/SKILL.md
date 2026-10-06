@@ -5,7 +5,7 @@ description: >-
   version-aware Nuxt 3/4 practices for Vue codebases. Use when writing or
   reviewing Vue/TypeScript code in Nuxt 3 or Nuxt 4 projects.
 metadata:
-  version: '3.0.0'
+  version: '4.0.0'
   author: Voidlight
   applyTo: '**/*.{vue,ts}'
   tags: [nuxt, vue, typescript, ssr, architecture]

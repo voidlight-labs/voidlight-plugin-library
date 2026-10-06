@@ -8,7 +8,7 @@ description: >-
   implementation skill before the PRD is approved. Use when starting any
   feature or implementation request.
 metadata:
-  version: '3.0.0'
+  version: '4.0.0'
   author: Voidlight
   applyTo: '**/*'
   tags: [prd, planning, product, process, routing, voidlight]

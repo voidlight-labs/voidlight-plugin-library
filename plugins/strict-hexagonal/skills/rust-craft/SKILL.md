@@ -5,7 +5,7 @@ description: >-
   and pragmatic 2-layer architecture for Axum and Actix codebases. Use when
   writing or reviewing Rust code in Axum or Actix projects.
 metadata:
-  version: '3.0.0'
+  version: '4.0.0'
   author: Voidlight
   applyTo: '**/*.rs'
   tags: [rust, axum, actix, systems, safety, architecture]

@@ -37,7 +37,6 @@ python -c "$(curl -sL https://raw.githubusercontent.com/voidlight-labs/voidlight
 | `typescript-craft` | Backend TypeScript (Express, Fastify) |
 | `nuxt-craft` | Nuxt 3/4, Vue 3 |
 | `nextjs-craft` | Next.js App Router |
-| `markdown-to-vdl` | Markdown → VDL conversion |
 | `prd-craft` | PRD-first gate with subagent routing by task size |
 | `craft-router` | Task → language-craft skill routing |
 
@@ -118,7 +117,7 @@ curl -sL ... | bash -s -- --agent codex python-craft
 | Command | Description |
 |---|---|
 | `install.sh SKILL` | Install single skill (auto-detect agent) |
-| `install.sh --all` | Install all 9 skills |
+| `install.sh --all` | Install all 8 skills |
 | `install.sh --update SKILL` | Update/reinstall a skill |
 | `install.sh --list` | List installed Voidlight skills |
 | `install.sh --remove SKILL` | Remove a skill from all agents |

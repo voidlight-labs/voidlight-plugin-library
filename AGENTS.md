@@ -23,7 +23,7 @@ This repo is a plugin library. Plugin catalogs are dual and kept in sync: root `
 |------|------|
 | `.zcode-plugin/plugin.json`, `.claude-plugin/plugin.json` | Plugin manifests. The manifest `version` is the single source of truth; skill frontmatters carry the same version under `metadata.version`. |
 | `assets/icon.png` | Plugin icon (512x512 PNG). Referenced by both catalogs via the `raw.githubusercontent.com/.../main/...` URL. |
-| `skills/{name}/SKILL.md` | One per skill (9 total: 6 craft, 3 process). Self-contained AI skill specs loaded by agents. |
+| `skills/{name}/SKILL.md` | One per skill (8 total: 6 craft, 2 process). Self-contained AI skill specs loaded by agents. |
 | `agents/{persona}.md` | 7 persona definitions (architect, smith, smith-low/med/high, surveyor, explorer). Subagent identity specs. Shipped as undeclared files: the ZCode manifest has no agents component. |
 | `benchmark/benchmark.py` | Python script evaluating AI-generated code against skill rules. |
 | `benchmark/scenarios/{lang}/scenario-{NN}-{difficulty}.md` | 30 total (5 per craft skill). Input files for the benchmark. |
@@ -64,7 +64,7 @@ Two skill categories live in the strict-hexagonal plugin:
 
   The canonical reference is `skills/python-craft/SKILL.md`. When creating a new craft skill, start from `SKILL_TEMPLATE.md`.
 
-- **Process skills** (`markdown-to-vdl`, `prd-craft`, `craft-router`): thinner instruction skills (gates, checklists, output contracts, routing). No rules-and-rubric anatomy required; no benchmark scenarios required (benchmark.py only covers craft skills). Frontmatter convention is the same.
+- **Process skills** (`prd-craft`, `craft-router`): thinner instruction skills (gates, checklists, output contracts, routing). No rules-and-rubric anatomy required; no benchmark scenarios required (benchmark.py only covers craft skills). Frontmatter convention is the same.
 
 ## Architecture Principle (2-Layer)
 
@@ -94,13 +94,13 @@ New skills or edits must pass:
 | `typescript-craft` | `**/*.ts` | Backend TypeScript: Express, Fastify |
 | `nuxt-craft` | `**/*.{vue,ts}` | Nuxt 3, Vue 3 |
 | `nextjs-craft` | `**/*.{tsx,ts}` | Next.js App Router |
-| `markdown-to-vdl` | `**/*.md` | VDL (Voidlight Definition Language) |
 | `prd-craft` | `**/*` | None (process skill, invoked at chat start) |
 | `craft-router` | `**/*` | None (process skill, invoked during prd-craft routing) |
 
 ## Versioning
 
-- The strict-hexagonal plugin is at `3.0.0` (source of truth: `plugins/strict-hexagonal/.zcode-plugin/plugin.json`). Keep both manifests, skill frontmatters, and the `version` on both catalog entries in sync.
+- The strict-hexagonal plugin is at `4.0.0` (source of truth: `plugins/strict-hexagonal/.zcode-plugin/plugin.json`). Keep both manifests, skill frontmatters, and the `version` on both catalog entries in sync.
+- The voidlight-soul plugin is at `1.1.0` (same sync rule; source of truth: `plugins/voidlight-soul/.zcode-plugin/plugin.json`). Its skills: `soul-write`, `soul-split`, `soul-audit`, `markdown-to-vdl`.
 - The GitHub repository is `voidlight-labs/voidlight-plugin-library`.
 
 ## Notes
@@ -110,3 +110,4 @@ New skills or edits must pass:
 - The repo does not contain actual application code — only markdown specifications.
 - When adding a benchmark scenario, place it in the correct `plugins/strict-hexagonal/benchmark/scenarios/{lang}/` directory.
 - New plugins go in `plugins/<name>/` with entries in both catalogs (root `marketplace.json` and `.claude-plugin/marketplace.json`).
+- `markdown-to-vdl` lives in `plugins/voidlight-soul/` (moved from strict-hexagonal at strict-hexagonal 4.0.0): VDL is the document language of Voidlight Soul, so the converter belongs there. `craft-router` no longer routes to it.

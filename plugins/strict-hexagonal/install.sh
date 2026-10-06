@@ -11,7 +11,7 @@ PLUGIN_DIR="plugins/strict-hexagonal"
 BRANCH="main"
 RAW_BASE="https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${BRANCH}"
 
-SKILLS="java-craft python-craft rust-craft typescript-craft nuxt-craft nextjs-craft markdown-to-vdl prd-craft craft-router"
+SKILLS="java-craft python-craft rust-craft typescript-craft nuxt-craft nextjs-craft prd-craft craft-router"
 
 # Color output
 RED='\033[0;31m'
@@ -189,7 +189,7 @@ install_gemini() {
         printf "\n\n"
         printf "<!-- Voidlight Skill: %s -->\n" "$skill_name"
         printf "<!-- Source: https://github.com/%s/%s -->\n" "$REPO_OWNER" "$REPO_NAME"
-        printf "<!-- Version: 3.0.0 -->\n"
+        printf "<!-- Version: 4.0.0 -->\n"
         printf "\n"
         cat "$tmpfile"
     } >> "$target_file"
