@@ -8,7 +8,7 @@ description: >-
   sekali-jadi. Untuk dokumen multi-section besar gunakan soul-split; untuk
   audit konten yang sudah ada gunakan soul-audit.
 metadata:
-  version: '1.1.0'
+  version: '1.2.0'
   author: Voidlight
   applyTo: '**/*'
   tags: [writing, voidlight-soul, divine-alignment, process]

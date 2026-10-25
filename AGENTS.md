@@ -100,7 +100,7 @@ New skills or edits must pass:
 ## Versioning
 
 - The strict-hexagonal plugin is at `4.0.0` (source of truth: `plugins/strict-hexagonal/.zcode-plugin/plugin.json`). Keep both manifests, skill frontmatters, and the `version` on both catalog entries in sync.
-- The voidlight-soul plugin is at `1.1.0` (same sync rule; source of truth: `plugins/voidlight-soul/.zcode-plugin/plugin.json`). Its skills: `soul-write`, `soul-split`, `soul-audit`, `markdown-to-vdl`.
+- The voidlight-soul plugin is at `1.2.0` (same sync rule; source of truth: `plugins/voidlight-soul/.zcode-plugin/plugin.json`). Its skills: `soul-write`, `soul-split`, `soul-audit`, `markdown-to-vdl`.
 - The GitHub repository is `voidlight-labs/voidlight-plugin-library`.
 
 ## Notes

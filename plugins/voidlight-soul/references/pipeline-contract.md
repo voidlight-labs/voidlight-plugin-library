@@ -25,7 +25,8 @@ audit.
 
 ## 2. Claim packet (prompt untuk sanad-auditor)
 
-Bungkus klaim dalam satu dispatch:
+Bungkus klaim per batch, satu batch = satu dispatch (audit kecil: satu
+batch = seluruh klaim):
 
 ```
 AUDIT REQUEST
@@ -44,6 +45,10 @@ Aturan pengisian:
 - Salin lafz Arab/transliterasi apa adanya dari draft.
 - Audit menyeluruh: masukkan juga klaim berdalil yang tidak di-flag jika user
   minta cek ulang.
+- Nomor V itu global lintas batch. Batch berisi subset (mis. V41-V50) itu
+  normal: pertahankan nomornya apa adanya, jangan di-renumber.
+- Klaim yang saling terkait (blok dalil sama, asbabun nuzul dan ayatnya)
+  tidak boleh terpecah ke batch yang berbeda.
 
 ## 3. Mapping verdict ke aksi
 

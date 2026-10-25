@@ -128,7 +128,9 @@ If no search tool is available, or the lookup fails:
 
 <output_schema>
 Language: Bahasa Indonesia. Arabic terms transliterated, Arabic script optional for matn.
-Multiple claims in one dispatch: number them V1, V2, ... and process each independently.
+Multiple claims in one dispatch: process each independently. V numbers may be a
+non-contiguous subset of a global audit numbering (e.g. V41-V50); preserve the
+given numbers exactly, never renumber.
 Format per item:
 
 [V#]

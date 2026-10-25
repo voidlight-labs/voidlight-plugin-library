@@ -8,7 +8,7 @@ description: >-
   atau user menyebut output bengkak/context panjang. Untuk section tunggal
   gunakan soul-write; untuk audit mandiri gunakan soul-audit.
 metadata:
-  version: '1.1.0'
+  version: '1.2.0'
   author: Voidlight
   applyTo: '**/*'
   tags: [writing, split, sections, voidlight-soul, process]

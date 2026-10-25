@@ -1,6 +1,6 @@
 # Voidlight Soul: Content Engine for the Divine Alignment Architecture
 
-![Version](https://img.shields.io/badge/version-1.1.0-blue)
+![Version](https://img.shields.io/badge/version-1.2.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Skills](https://img.shields.io/badge/skills-4-blueviolet)
 ![Agents](https://img.shields.io/badge/agents-2-purple)

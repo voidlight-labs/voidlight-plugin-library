@@ -7,7 +7,7 @@ description: >-
   validation. Use when converting structured Markdown documents into VDL
   files.
 metadata:
-  version: '1.1.0'
+  version: '1.2.0'
   author: Voidlight
   applyTo: '**/*.md'
   tags: [vdl, markdown, converter, knowledge-graph, voidlight]
