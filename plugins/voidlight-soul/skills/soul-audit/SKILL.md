@@ -56,6 +56,10 @@ Bukan untuk: menulis atau merevisi konten (pake soul-write / soul-split).
    - Pisahkan per tipe sumber kalau memungkinkan: batch ayat (T6) dan
      batch hadits/takhrij (T1/T3/T5) jangan dicampur, biar lookup tiap
      agent seragam.
+   - Dokumen hasil soul-split (hub + folder parts): satu file part = satu
+     audit tersendiri, bukan batch dalam satu audit. Nomor V mulai dari
+     V1 per file part, laporan menyebut nama file part, dan manifest
+     `<dokumen>.sections.md` jadi checklist progress.
 3. **Dispatch paralel.** Semua batch dikirim dalam satu giliran (beberapa
    pemanggilan subagent sekaligus, bukan bergantian). Tiap batch = satu
    claim packet lengkap sesuai template di `../../references/pipeline-contract.md`

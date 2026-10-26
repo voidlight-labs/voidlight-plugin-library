@@ -3,10 +3,14 @@ name: soul-split
 description: >-
   Workflow dokumen Voidlight Soul skala besar per-section: bikin section
   manifest sidecar, dispatch voidlight-scribe sekali per section, audit
-  sanad-auditor per section, lalu assemble + consistency pass. Gunakan saat
-  request adalah dokumen atau Part baru multi-section, expansion korpus,
-  atau user menyebut output bengkak/context panjang. Untuk section tunggal
-  gunakan soul-write; untuk audit mandiri gunakan soul-audit.
+  sanad-auditor per section, lalu assemble + consistency pass. Mode
+  SPLIT-EXISTING memecah dokumen monolitik yang sudah ada jadi hub + file
+  part secara verbatim (tanpa nulis ulang) biar gampang dikelola dan
+  diaudit satu-satu. Gunakan saat request adalah dokumen atau Part baru
+  multi-section, expansion korpus, user menyebut output bengkak/context
+  panjang, atau dokumen existing terlalu besar buat diaudit satu file.
+  Untuk section tunggal gunakan soul-write; untuk audit mandiri gunakan
+  soul-audit.
 metadata:
   version: '1.2.0'
   author: Voidlight
@@ -18,7 +22,8 @@ metadata:
 
 Skill dokumen skala besar: pecah kerjaan jadi section, satu dispatch scribe
 per section, audit per section, assemble di akhir. Tujuannya: context dan
-output tidak pernah bengkak. Skill ini tidak menulis konten sendiri.
+output tidak pernah bengkak. Dokumen existing yang sudah bengkak dipecah
+verbatim lewat Mode SPLIT-EXISTING. Skill ini tidak menulis konten sendiri.
 
 ## Section Manifest
 
@@ -87,6 +92,31 @@ TIDAK disimpan di manifest.
    (dengan flag sisipan yang masih ada) dan update status jadi `done`.
 4. Ulangi WRITE-NEXT sampai semua entry `done`.
 
+## Mode SPLIT-EXISTING
+
+Dipakai saat target adalah dokumen monolitik yang SUDAH ada dan user minta
+dipecah biar gampang dikelola atau diaudit per bagian. Tidak ada dispatch
+scribe: kontennya sudah jadi.
+
+1. Petakan boundary struktural top-level lewat grep heading (mis. `# PART`,
+   `# APPENDIX`, Axiom), catat nomor baris tiap boundary.
+2. Split **verbatim**: konten dipindah apa adanya, tanpa ubah prose.
+   Menulis ulang berarti risiko content drift. Konten yang sudah lewat
+   audit langsung berstatus `done` di manifest.
+3. Struktur hasil: file asli jadi **hub** (front matter, tagline/disclaimer,
+   index tabel part + urutan baca, footer); tiap part jadi file sendiri di
+   subfolder dengan frontmatter `type: framework-part` (versi + back-link ke
+   hub); sidecar manifest `<nama-dokumen>.sections.md` dengan entry `file:`
+   per section.
+4. Registry pillar (mis. `SOUL.md`) diupdate: versi + catatan struktur
+   multi-file.
+5. Verifikasi integritas: tiap heading top-level muncul tepat 1x di
+   file-nya, hub bersih dari sisa konten, total baris body reconcile
+   (selisih ≤ 1 baris blank tolerable), flag audit (`PERLU_VERIFIKASI_SANAD`,
+   catatan audit) terbawa ke file part yang benar.
+6. Manifest diisi sesuai status audit konten; laporan ke user menyebut
+   path hub, parts, manifest, dan hasil verifikasi.
+
 ## Mode ASSEMBLE
 
 1. Pastikan semua entry manifest berstatus `done`. Kalau belum, selesaikan
@@ -101,6 +131,8 @@ TIDAK disimpan di manifest.
 ## Aturan Keras
 
 - Satu dispatch scribe = satu section. Dilarang dispatch full-doc.
+- SPLIT-EXISTING: split verbatim, dilarang menulis ulang atau merapikan
+  prose saat split.
 - Manifest diupdate di tiap perubahan status, sebelum lanjut section
   berikutnya.
 - Section di-append ke dokumen target hanya setelah `audited` (atau langsung
